@@ -20,7 +20,7 @@
     <header id="header">
         <div id="logo"><img src="assets/images/logo-white.png" alt="Condado Group" /></div>
 
-        <div class="hd-content" style="display: none;">
+        <div class="hd-content">
             <div class="hd-left">
                 <div class="dd-wrap">
                     <button id="agent-status-dropdown">
@@ -49,18 +49,29 @@
 
             <div class="hd-actions">
                 <h5>Asad W.</h5>
-                <a href="#"><i class="fas fa-cog"></i></a>
+                <!-- <a href="#"><i class="fas fa-cog"></i></a> -->
+
+                <div class="dd-wrap">
+                    <a class="dd-icon" href="javascript:;">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                    <ul class="dd-list">
+                        <li><a href="javascript:;" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Download Logs</a></li>
+                        <li><a class="btn-logout" href="#"><i class="fas fa-sign-out"></i> Logout</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header><!-- end header -->
 
     <main id="main">
 
-        <div class="ccp-login">
+        <div class="ccp-login" style="display: none;">
             <button class="btn btn-primary mb-4" type="button">Login</button>
         </div><!-- end .ccp-login -->
 
-        <aside class="sidebar" style="display: none;">
+        <aside class="sidebar">
             <ul class="sidebar-nav">
                 <li>
                     <a class="btn-call active" href="#">
@@ -78,7 +89,7 @@
             <div class="sidebar-content">
 
                 <!-- ccp-no-call -->
-                <div class="ccp-call-sec">
+                <div class="ccp-call-sec" style="display: none;">
                     <div class="content-body">
                         <div class="current-call">
                             Current Call <span class="call-count">1</span>
@@ -273,7 +284,7 @@
                     </div>
                 </div><!-- end .ccp-ccp-keypad-sec -->
 
-                <div class="connecting-call-sec" style="display: none;">
+                <div class="connecting-call-sec">
                     <div class="content-body">
                         <div class="alert alert-success d-flex align-items-center">
                             <strong>+1 575-329-9620</strong> 
@@ -302,7 +313,7 @@
             </div>
         </aside><!-- end .sidebar -->
 
-        <div class="content-sec" style="display: none;">
+        <div class="content-sec">
 
             <div class="ccp-no-interaction" style="display: none;">
                 <div class="ccp-ni-content text-center mb-5">
@@ -520,6 +531,68 @@
         </div><!-- end .content-sec -->
 
     </main><!-- #main -->
+
+    <!-- Modal Settings -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <label class="form-label">Phone Type</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="phoneType" id="phoneType1" checked>
+                        <label class="form-check-label" for="phoneType1">Softphone</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="phoneType" id="phoneType2">
+                        <label class="form-check-label" for="phoneType2">Desk phone</label>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="phone-number" class="form-label">Phone number or quick dial</label>
+                    <div class="phone-field">
+                        <div class="col">
+                            <div class="form-item">
+                                <!-- <label for="country_selector2" class="form-label">Country</label> -->
+                                <input id="country_selector2" type="text">
+                            </div>
+                            <div class="form-item" style="display:none;">
+                                <input type="text" id="country_selector_code" name="country_selector_code" data-countrycodeinput="1" readonly="readonly" placeholder="Selected country code will appear here" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input id="phone-number" name="phone-number" type="text" placeholder="Number or quick dial" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="language" class="form-label">Language</label>
+                    <select id="language" name="language" class="form-select">
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="ja">日本語</option>
+                        <option value="it">Italiano</option>
+                        <option value="ko">한국어</option>
+                        <option value="pt">Português</option>
+                        <option value="zh_HANS">中文(简体)</option>
+                        <option value="zh_HANT">中文(繁體)</option>
+                    </select>
+                </div>  
+                
+                <div class="mb-1 text-end">
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

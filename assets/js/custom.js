@@ -75,7 +75,7 @@ jQuery(document).ready(function($){
             $(parent_elm).addClass("dd-open");
         }
     });   
-    $('.dd-wrap ul li').click(function(){
+    $('.hd-left .dd-wrap ul li').click(function(){
         var dd_list_text = $(this).text();
         $('.dd-wrap ul li').each(function(){
             if ($(this).hasClass("d-none")) {
