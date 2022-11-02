@@ -1,0 +1,856 @@
+/**** General/Global CSS ****/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    color: #777;
+    font-size: 1rem;
+    font-weight: normal;
+    background: #EFEFEE;
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+    color: #7CB900;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+a:hover{
+    color: #7CB900;
+}
+h1 {
+    font-size: 1.5rem;
+}
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+h3 {
+    font-size: 1.125rem;
+}
+h4 {
+    font-size: 1rem;
+}
+label{
+    font-weight: 600;
+}
+.form-label{
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+.form-check-label{
+    font-size: 1rem;
+}
+.req{
+    color: #EF1B1B !important;
+}
+textarea{
+    /* height: 62px; */
+}
+.form-control,
+.form-select{
+    color: #777;
+}
+/**** Alert CSS ****/
+.alert{
+    border-radius: 0;
+    border:  none;
+    font-size: 0.8rem;
+}
+.alert-danger{
+    color: #fff;
+    background-color: #d0021b;
+}
+.alert-dismissible .btn-close{
+    width: 11px;
+    height: 11px;
+    color: #fff;
+    background: none;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 1;
+    outline: none;
+}
+.alert-dismissible .btn-close svg{
+    vertical-align: top;
+}
+.alert-success{
+    color: #fff;
+    background-color: #7CB900;
+    justify-content: space-between;
+}
+.alert-info{
+    color: #fff;
+    background-color: #008cdd;
+    justify-content: space-between;
+}
+.alert-warning{
+    color: #fff;
+    background-color: #f37a00;
+    justify-content: space-between;
+}
+.alert-danger{
+    color: #fff;
+    background-color: #EF1B1B;
+    justify-content: space-between;
+}
+.alert-dark{
+    color: #fff;
+    background-color: #777;
+    justify-content: space-between;
+}
+/**** Button CSS ****/
+.btn{
+    font-size: 0.95rem !important;
+    /* padding: .375rem 1.25rem; */
+    box-shadow: none !important;
+}
+.btn-primary,
+.btn-secondary{
+    /* width: 250px;
+    max-width: 100%; */
+    height: 38px;
+    line-height: 36px;
+    color: #fff !important;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    padding: 0 25px;
+    text-transform: none;
+    background-color: #7CB900 !important;
+    border: 1px solid #7CB900 !important;
+    outline: none;
+    cursor: pointer;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover{
+    background-color: #666 !important;
+    border: 1px solid #666 !important;
+}
+.btn-secondary{
+    width: auto;
+    color: #777 !important;
+    background-color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: 0 0 4px rgba(56, 65, 74, 0.1);
+    padding: 0 25px;
+}
+.btn-secondary:hover{
+    color: #fff !important;
+    background-color: #666 !important;
+    border-color: #666 !important;
+}
+.btn-border{
+    border: 1px solid #777;
+}
+.btn-sm{
+    min-width: 90px;
+    line-height: 34px;
+}
+.btn-wrap{
+    width: 280px;
+    max-width: 100%;
+    margin: auto;
+}
+.btn-wrap .btn{
+    width: 100% !important;
+}
+/**** Header CSS ****/
+header{
+    height: 62px;
+    padding: 6px 12px;
+    /* background-color: rgb(242, 242, 242); */
+    background-color: #666;
+    text-align: center;
+    position: relative;
+}
+header #logo img{
+    max-height: 50px;
+}
+
+.hd-content{
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.hd-left{
+    width: 348px;
+}
+.hd-actions{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.hd-actions h5{
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 20px 0 0;
+}
+.hd-actions a{
+    color: #fff;
+    font-size: 24px;
+}
+.hd-actions a:hover{
+    color: #eee;
+}
+/* Dropdown */
+.dd-wrap{
+    position: relative;
+    z-index: 2;
+}
+#agent-status-dropdown{
+    width: 100%;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 0px 12px;
+    font-size: 0.95rem;
+    color: #777;
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.dd-open #agent-status-dropdown{
+    
+    background-color: #fff;
+}
+.dd-icon{
+    display: flex;
+}
+.dd-selected-opt{
+    width: 100%;
+    padding: 0px 10px;
+    text-align: left;
+}
+.dd-arrow svg{
+    transition: all 0.3s ease-in-out;
+}
+.dd-wrap.dd-open .dd-arrow svg{
+    transform: rotate(-180deg);
+}
+.dd-wrap .dd-list {
+    display: none;
+    width: 100%;
+    height: 172px;
+    max-height: 300px;
+    overflow: auto;
+    box-shadow: rgb(0 0 0 / 10%) 1px 2px 3px 0px;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid transparent;
+    position: absolute;
+    top: 34px;
+    left: 0px;
+}
+.dd-wrap.dd-open .dd-list{
+    display: block;
+}
+.dd-wrap .dd-list li{
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 10px 10px 43px;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+}
+.dd-wrap .dd-list li:hover{
+    color: rgb(255, 255, 255);
+    background: rgba(124, 185, 0, 1);
+}
+
+/**** Main CSS ****/
+#main{
+    height: 100%;
+    position: relative;
+}
+
+.ccp-login{
+    width: 100%;
+    height: calc(100vh - 62px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ccp-login .btn-primary{
+    width: 160px;
+    background-color: #666 !important;
+    border: 1px solid #666 !important;
+}
+.ccp-login .btn-primary:hover{
+    background-color: #7CB900 !important;
+    border: 1px solid #7CB900 !important;
+}
+
+/**** Sidebar CSS ****/
+.sidebar{
+    width: 360px;
+    height: 100%;
+    min-height: 600px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-nav{
+    width: 61px;
+    background-color: #E8E8E8;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #ddd;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-nav li a{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #777;
+}
+.sidebar-nav li a.active,
+.sidebar-nav li a:hover{
+    color: #fff;
+    background-color: #7CB900;
+}
+.sidebar-nav li a i{
+    font-size: 20px;
+    margin: 3px 0 5px;
+}
+.sidebar-nav li a span{
+    display: block;
+    font-size: 0.6rem;
+    line-height: 1.2;
+}
+.sidebar-content{
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    margin-left: 61px;
+    position: relative;
+}
+
+/**** Content CSS ****/
+.content-sec{
+    height: calc(100vh - 62px);
+    margin-left: 360px;
+}
+.ccp-no-interaction{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ccp-no-interaction h3{
+    color: #ccc;
+    font-size: 28px;
+    font-weight: normal;
+}
+.ccp-ni-content{
+    width: 520px;
+    max-width: 520px !important;
+}
+.ccp-no-interaction form{
+    display: flex;
+}
+.ccp-no-interaction .phone-field{
+    width: 100%;
+    height: 38px;
+}
+.ccp-no-interaction button{
+    width: 120px;
+}
+.ccp-interaction{
+    height: 100%;
+}
+.ccp-interaction form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.form-fields{
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+
+/**** Live Call CSS ****/
+.live-call-wrap{
+    /* background-color: #eee; */
+}
+.live-call-number{
+    display: flex;
+    align-items: center;
+}
+.live-call-number{
+    font-size: 1.75rem;
+    line-height: 1.1;
+}
+.live-call-number span{
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+.title{
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #7CB900;
+}
+
+/**** CCP Header CSS ****/
+.ccp-wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* overflow: hidden; */
+    background-color: #f7f7f7;
+    position: relative;
+}
+.ccp-header{
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    background: #777;
+    position: relative;
+}
+.ccp-content{
+    /* min-height: calc(100% - 38px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; */
+
+    flex: 1 1 0px;
+}
+
+/* Nav */
+.ccp-hd-actions{
+    display: flex;
+}
+.ccp-hd-actions a{
+    width: 40px;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    outline: none;
+}
+.ccp-hd-actions a.active{
+    color: #777;
+    background-color: #fff;
+}
+
+#tab-1,
+#tab-2{
+    height: 100%;
+    min-height: 520px;
+}
+
+/**** Welcome CSS ****/
+.ccp-welcome-sec {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.ccp-welcome-sec h2{
+    color: #777;
+}
+.ccp-welcome-icon{
+    margin-bottom: 80px;
+}
+
+/**** Live Call CSS ****/
+.ccp-call-sec{
+    /* height: 100%;
+    position: relative; */
+    background: transparent !important;
+}
+.current-call{
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: left;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    background-color: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.current-call .call-count{
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 3px;
+    background-color: #7CB900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ccp-no-call .current-call .call-count{
+    color: #999;
+    background-color: #eee;
+}
+.ccp-no-current-call{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.ccp-no-current-call h5{
+    color: #bbb;
+    font-weight: normal;
+}
+.call-details{
+    text-align: center;
+}
+.block-title{
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.block-title:after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    z-index: -1;
+}
+.block-title span{
+    display: inline-block;
+    padding: 0 5px;
+    background-color: #EFEFEE;
+    position: relative;
+    /* z-index: 1; */
+}
+.call-number{
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+.media-controls .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.media-controls .btn i,
+.media-controls .btn svg{
+    margin-right: 6px !important;
+}
+.media-controls .btn:hover svg,
+.media-controls .btn:hover svg path{
+    fill: #fff !important;
+}
+.btn-call-end:hover{
+    color: #fff !important;
+    background-color: #d0021b !important;
+    border-color: #d0021b !important;
+}
+.media-controls .mb-5{
+    margin-bottom: 80px !important;
+}
+/**** CCP Settings CSS ****/ 
+.ccp-settings-sec{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.ccp-settings-sec .content-body{
+    flex: 1 1 0px;
+}
+.btn-close{
+    width: 0.5em;
+    height: 0.5em;
+    position: absolute;
+    right: 0.8rem;
+    top: 1.3rem;
+}
+.ccp-settings-sec .content-action{
+    text-align: right;
+    box-shadow: rgb(200 200 200 / 43%) 1px 1px 1px 0px;
+}
+.ccp-settings-sec .content-links{
+    text-align: left;
+}
+/**** CCP Quick Dial CSS ****/ 
+.ccp-call-sec,
+.ccp-quick-dial-sec,
+.ccp-keypad-sec,
+.connecting-call-sec{
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #EFEFEE;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.content-body{
+    flex: 1 1 0px;
+    box-shadow: rgb(200 200 200 / 43%) 1px 1px 4px 0px;
+    position: relative;
+}
+.phone-field{
+    display: flex;
+    position: relative;
+    /* padding-bottom: 5px; */
+    border-bottom: 1px solid rgb(118, 118, 118);
+}
+.phone-field > div:first-child{
+    max-width: 52px;
+    display: flex;
+}
+.phone-field > div:first-child .form-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.phone-field > div:last-child{
+    position: relative;
+}
+.phone-field > div:last-child input{
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    background: none;
+    border: none;
+    outline: none;
+}
+.phone-field .form-label{
+    display: block;
+}
+.phone-field #country_selector,
+.phone-field #country_selector2,
+.phone-field #country_selector3{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+}
+.country-select,
+.country-select .flag-dropdown,
+.country-select .selected-flag .flag{
+    position: static;
+    margin: 0;
+}
+.country-select .selected-flag{
+    height: 36px;
+    display: flex;
+    align-items: center;
+}
+.country-select .country-list{
+    width: 100%;
+}
+.content-footer{
+    text-align: center;
+}
+.content-footer .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-footer .btn i,
+.content-footer .btn svg{
+    margin-right: 6px !important;
+}
+.content-footer .btn:hover svg,
+.content-footer .btn:hover svg path{
+    fill: #fff !important;
+}
+.result-list{
+    list-style: none;
+    padding: 0;
+    margin: 0 -1.5rem;
+}
+.result-list li a{
+    display: block;
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+    background-color: #7CB900;
+}
+
+/**** Dialer CSS ****/
+.dialer-wrap{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.dialer-block{
+    margin: auto;
+}
+.dialer-block .ccp-keypad-row{
+    display: flex;
+}
+.dialer-block button{
+    width: 65px;
+    height: 54px;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    user-select: none;
+    overflow: hidden;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    background: none;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+.dialer-block button:hover{
+    color: #fff;
+    background: #919191;
+}
+.dialer-block .ccp-keypad-row{
+    border-bottom: 1px solid #ccc;
+}
+.dialer-block button:last-of-type,
+.dialer-block .last-row{
+    border: none;
+}
+.dialer-block button span{
+    display: block;
+}
+.dialer-block button .key-text{
+    font-size: 0.70rem;
+}
+.dialer-block .ccp-keypad-key1{
+    font-size: 2.2rem;
+    padding-top: 8px;
+}
+.dialer-block .ccp-keypad-key2{
+    line-height: 1.1;
+}
+.dialer-block .ccp-keypad-key2 .key-text{
+    font-size: 1rem;
+}
+.dialer-block .ccp-keypad-key3{
+    font-size: 1.45rem;
+}
+/**** Contact Form CSS ****/
+.contact-form{
+    /* height: 100%;
+    display: flex;
+    flex-direction: column; */
+    /* background-color: #f7f7f7; */
+}
+.cf-header{
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #777;
+    text-align: center;
+}
+.cf-header h2{
+    color: #fff;
+    margin: 0;
+}
+/* .contact-form form{
+    height: 100%;
+    overflow: auto;
+} */
+
+/*** Responsive ***/
+/* @media (max-height: 662px) {
+    .content-sec{
+        height: auto;
+    }
+} */
+@media (max-width: 1279px) {
+
+}
+@media (max-width: 991px) {
+
+    header{
+        height: auto;
+        padding: 10px 12px;
+    }
+    .hd-content{
+        position: static;
+        padding: 10px 0 0;
+    }
+    .hd-left{
+        width: 300px;
+    }
+    .ccp-login{
+        height: calc(100vh - 70px);
+    }
+    .sidebar{
+        width: 100%;
+        position: static;
+    }
+    .content-sec{
+        height: auto;
+        margin: 0 0 0 61px;
+    }
+    .form-fields,
+    .sidebar-content{
+        height: auto;
+        overflow: visible;
+    }
+    .content-footer .btn{
+        padding: 0 25px;
+    }
+}
+@media (max-width: 567px) {
+    .hd-left{
+        width: 220px;
+    }
+}
+@media (max-width: 479px) {
+    .hd-left{
+        width: 180px;
+    }
+}

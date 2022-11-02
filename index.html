@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/css/countrySelect.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <title>Condado CCP</title>
+</head>
+<body>
+
+    <header id="header">
+        <div id="logo"><img src="assets/images/logo-white.png" alt="Condado Group" /></div>
+
+        <div class="hd-content" style="display: none;">
+            <div class="hd-left">
+                <div class="dd-wrap">
+                    <button id="agent-status-dropdown">
+                        <div class="dd-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10" cy="10" r="10" fill="#EF1B1B"/>
+                                <path d="M6.11794 5L5 6.11794L8.90663 10L5 13.8821L6.11794 15L10.0246 11.1179L13.9312 15L15.0369 13.8821L11.1425 10L15.0369 6.11794L13.9312 5L10.0246 8.88206L6.11794 5Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="dd-selected-opt">Not Ready</div>
+                        <div class="dd-arrow">  
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.99953 7.2C5.74367 7.2 5.48768 7.09955 5.29269 6.89866L0.292953 1.7558C-0.0976512 1.35402 -0.0976512 0.703125 0.292953 0.301339C0.683558 -0.100446 1.31634 -0.100446 1.70694 0.301339L5.99953 4.71857L10.2931 0.302143C10.6837 -0.099643 11.3164 -0.099643 11.707 0.302143C12.0977 0.703928 12.0977 1.35482 11.707 1.75661L6.70731 6.89946C6.512 7.10036 6.25577 7.2 5.99953 7.2Z" fill="#333333"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <ul class="dd-list">
+                        <li class="d-none">Not Ready</li>
+                        <li>Training</li>
+                        <li>Break</li>
+                        <li>Meeting</li>
+                        <li>Available</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hd-actions">
+                <h5>Asad W.</h5>
+                <a href="#"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </header><!-- end header -->
+
+    <main id="main">
+
+        <div class="ccp-login">
+            <button class="btn btn-primary mb-4" type="button">Login</button>
+        </div><!-- end .ccp-login -->
+
+        <aside class="sidebar" style="display: none;">
+            <ul class="sidebar-nav">
+                <li>
+                    <a class="btn-call active" href="#">
+                        <i class="fas fa-phone"></i>
+                        <span>Call</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-quick-dial" href="#">
+                        <i class="fas fa-address-book"></i>
+                        <span>Quick Dial</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-content">
+
+                <!-- ccp-no-call -->
+                <div class="ccp-call-sec">
+                    <div class="content-body">
+                        <div class="current-call">
+                            Current Call <span class="call-count">1</span>
+                        </div>
+                        <div class="ccp-no-current-call" style="display: none;">
+                            <h5>No current call</h5>
+                        </div>
+                        <div class="ccp-live-call p-3">
+                            <div class="call-details mb-4">
+                                <h5 class="block-title"><span>Call Details</span></h5>
+                                <p><strong class="d-block">Outbound</strong> CB - Manual Call</p>
+                                <div class="call-number">(816) 888-5501</div>
+                                <div class="call-timer">
+                                    <i class="far fa-clock"></i> 0:04
+                                </div>
+                            </div>
+
+                            <div class="media-controls">
+                                <h5 class="block-title"><span>Media Controls</span></h5>
+
+                                <div class="">
+                                    <button class="btn btn-secondary w-100 mb-3" type="button">
+                                        <i class="fas fa-pause me-1"></i> Hold
+                                    </button>
+
+                                    <div class="d-flex mb-3">
+                                        <button class="btn btn-secondary px-1 w-50 me-2" type="button">
+                                            <i class="far fa-arrow-right me-1"></i> Transfer
+                                        </button>
+                                        <button class="btn btn-secondary px-1 w-50 ms-2" type="button">
+                                            <i class="fas fa-microphone-slash me-1"></i> Mute
+                                        </button>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button class="btn btn-secondary px-1 w-50 me-2" type="button">
+                                            <i class="fas fa-user-plus me-1"></i> Conference
+                                        </button>
+                                        <button class="btn btn-secondary btn-keypad px-1 w-50 ms-2" type="button">
+                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0V3H3.54545V0H0ZM4.72727 0V3H8.27273V0H4.72727ZM9.45455 0V3H13V0H9.45455ZM0 4.5V7.5H3.54545V4.5H0ZM4.72727 4.5V7.5H8.27273V4.5H4.72727ZM9.45455 4.5V7.5H13V4.5H9.45455ZM0 9V12H3.54545V9H0ZM4.72727 9V12H8.27273V9H4.72727ZM9.45455 9V12H13V9H9.45455Z" fill="#777777"/>
+                                            </svg>
+                                            <!-- <i class="fas fa-pause me-1"></i>  -->
+                                            Keypad
+                                        </button>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-footer p-3">
+                        <button class="btn btn-secondary btn-call-end w-100" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 14.6" role="img"
+                                width="18" height="18" aria-hidden="true">
+                                <path
+                                    d="M18.61 11.36a13.44 13.44 0 00-18.37 0 .73.73 0 000 1.08l2 1.93a.7.7 0 00.55.23.71.71 0 00.55-.23 10.38 10.38 0 012.08-1.47.88.88 0 00.47-.69v-2.4a11.19 11.19 0 013.61-.54 14 14 0 013.61.54v2.4a.74.74 0 00.47.69 8 8 0 012.12 1.47.71.71 0 00.55.23.7.7 0 00.55-.23l2-1.93a.68.68 0 00.2-.54 3.8 3.8 0 00-.39-.54zm-2-8l-1.06-1.12L12.72 5l1.1 1.08a33.71 33.71 0 012.82-2.78zM10.21 0H8.64v3.86h1.57V0zM5 6l1.1-1.09-2.72-2.75L2.2 3.32C2.36 3.32 5 6 5 6z"
+                                    fill="#EF1B1B" fill-rule="evenodd"></path>
+                            </svg>
+                            End Call
+                        </button>
+                    </div>
+                </div><!-- end .ccp-call-sec -->
+
+                <div class="ccp-quick-dial-sec" style="display: none;">
+                    <div class="content-body p-3">
+                        <button class="btn-close" type="button"></button>
+                        <h2 class="mb-4">Quick Dial</h2>
+
+                        <label for="phone-number" class="form-label">Phone number or quick dial</label>
+                        <div class="phone-field">
+                            <div class="col">
+                                <div class="form-item">
+                                    <!-- <label for="country_selector2" class="form-label">Country</label> -->
+                                    <input id="country_selector2" type="text">
+                                </div>
+                                <div class="form-item" style="display:none;">
+                                    <!-- <label for="country_selector_code2">...and the selected country code will be updated here</label> -->
+                                    <input type="text" id="country_selector_code2" name="country_selector_code2" data-countrycodeinput="1" readonly="readonly" placeholder="Selected country code will appear here" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input id="phone-number" name="phone-number" type="text" placeholder="Number or quick dial" />
+                            </div>
+                        </div>
+                        <ul class="result-list">
+                            <li><a href="#">+1 575-329-9620</a></li>
+                        </ul>
+                        <!-- <p class="mt-3">No results found</p> -->
+                    </div>
+                    <div class="content-footer p-3">
+                        <button class="btn btn-secondary btn-keypad w-100 mb-3" type="button">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V3.46154H4.09091V0H0ZM5.45455 0V3.46154H9.54545V0H5.45455ZM10.9091 0V3.46154H15V0H10.9091ZM0 5.19231V8.65385H4.09091V5.19231H0ZM5.45455 5.19231V8.65385H9.54545V5.19231H5.45455ZM10.9091 5.19231V8.65385H15V5.19231H10.9091ZM0 10.3846V13.8462H4.09091V10.3846H0ZM5.45455 10.3846V13.8462H9.54545V10.3846H5.45455ZM10.9091 10.3846V13.8462H15V10.3846H10.9091Z" fill="#777777"/>
+                            </svg>
+                            <span class="btn-text">Keypad</span>
+                        </button>
+                        <button class="btn btn-primary w-100" type="button">
+                            <i class="fas fa-phone me-1"></i>
+                            <span class="btn-text">Call</span>
+                        </button>
+                    </div>
+                </div><!-- end .ccp-quick-dial-sec -->
+
+                <div class="ccp-keypad-sec" style="display: none;">
+                    <div class="content-body p-3">
+                        <button class="btn-close" type="button"></button>
+
+                        <div class="dialer-wrap">
+                            <div class="dialer-header">
+                                <h2 class="mb-4">Keypad</h2>
+                                <label for="phone-number" class="form-label">Phone number or quick dial</label>
+                                <div class="phone-field">
+                                    <div class="col">
+                                        <div class="form-item">
+                                            <input id="country_selector3" type="text">
+                                        </div>
+                                        <div class="form-item" style="display:none;">
+                                            <input type="text" id="country_selector_code3" name="country_selector_code3" data-countrycodeinput="1" readonly="readonly" placeholder="Selected country code will appear here" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <input id="phone-number" name="phone-number" type="text" placeholder="Number or quick dial" />
+                                    </div>
+                                </div>
+                            </div>                                        
+                            <div class="dialer-block pt-3">
+                                <div class="ccp-keypad-row">
+                                    <button class="ccp-keypad-key" type="button">1</button>
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>2</span>
+                                        <span class="key-text">ABC</span>
+                                    </button>
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>3</span>
+                                        <span class="key-text">DEF</span>
+                                    </button>
+                                </div>
+                                <div class="ccp-keypad-row">
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>4</span>
+                                        <span class="key-text">GHI</span>
+                                    </button>
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>5</span>
+                                        <span class="key-text">JKL</span>
+                                    </button>
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>6</span>
+                                        <span class="key-text">MNO</span>
+                                    </button>
+                                </div>
+                                <div class="ccp-keypad-row">
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>7</span>
+                                        <span class="key-text">PQRS</span>
+                                    </button>
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>8</span>
+                                        <span class="key-text">TUV</span>
+                                    </button>
+                                    <button class="ccp-keypad-key" type="button">
+                                        <span>9</span>
+                                        <span class="key-text">WXYZ</span>
+                                    </button>
+                                </div>
+                                <div class="ccp-keypad-row last-row">
+                                    <button class="ccp-keypad-key ccp-keypad-key1" type="button">
+                                        <strong>*</strong>
+                                    </button>
+                                    <button class="ccp-keypad-key ccp-keypad-key2" type="button">
+                                        <span>0</span>
+                                        <span class="key-text">+</span>
+                                    </button>
+                                    <button class="ccp-keypad-key ccp-keypad-key3" type="button">
+                                        <strong>#</strong>
+                                    </button>
+                                </div>
+                                
+                            </div><!-- end .dialer-block -->
+                        </div><!-- end .dialer-wrap -->
+                    </div>
+                    <div class="content-footer p-3">
+                        <button class="btn btn-secondary btn-quick-dial w-100 mb-3" type="button">
+                            <i class="fas fa-address-book me-1"></i>
+                            <span class="btn-text">Quick Dial</span>
+                        </button>
+                        <button class="btn btn-primary w-100" type="button">
+                            <i class="fas fa-phone me-1"></i>
+                            <span class="btn-text">Call</span>
+                        </button>
+                    </div>
+                </div><!-- end .ccp-ccp-keypad-sec -->
+
+                <div class="connecting-call-sec" style="display: none;">
+                    <div class="content-body">
+                        <div class="alert alert-success d-flex align-items-center">
+                            <strong>+1 575-329-9620</strong> 
+                            <div>Connecting</div>
+                        </div>
+                        <!-- <div class="alert alert-danger d-flex align-items-center alert-dismissible fade show">
+                            <svg class="bi flex-shrink-0 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" role="img" width="18" height="18" aria-hidden="true"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm1 15H9v-2h2zm0-4H9V5h2z"></path></svg>
+                            <div>
+                                <strong>Softphone call failed</strong><br> Failed to establish softphone connection. Try again or contact your administrator.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><svg viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" width="11" height="11" aria-hidden="true"><path d="M13 1.3L11.7 0 6.5 5.2 1.3 0 0 1.3l5.2 5.2L0 11.7 1.3 13l5.2-5.2 5.2 5.2 1.3-1.3-5.2-5.2z" fill-rule="evenodd"></path></svg></button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="content-footer p-3">
+                        <button class="btn btn-secondary btn-call-end w-100" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 14.6" role="img"
+                                width="18" height="18" aria-hidden="true">
+                                <path
+                                    d="M18.61 11.36a13.44 13.44 0 00-18.37 0 .73.73 0 000 1.08l2 1.93a.7.7 0 00.55.23.71.71 0 00.55-.23 10.38 10.38 0 012.08-1.47.88.88 0 00.47-.69v-2.4a11.19 11.19 0 013.61-.54 14 14 0 013.61.54v2.4a.74.74 0 00.47.69 8 8 0 012.12 1.47.71.71 0 00.55.23.7.7 0 00.55-.23l2-1.93a.68.68 0 00.2-.54 3.8 3.8 0 00-.39-.54zm-2-8l-1.06-1.12L12.72 5l1.1 1.08a33.71 33.71 0 012.82-2.78zM10.21 0H8.64v3.86h1.57V0zM5 6l1.1-1.09-2.72-2.75L2.2 3.32C2.36 3.32 5 6 5 6z"
+                                    fill="#EF1B1B" fill-rule="evenodd"></path>
+                            </svg>
+                            End Call
+                        </button>
+                    </div>
+                </div><!-- end .connecting-call-sec -->
+            </div>
+        </aside><!-- end .sidebar -->
+
+        <div class="content-sec" style="display: none;">
+
+            <div class="ccp-no-interaction" style="display: none;">
+                <div class="ccp-ni-content text-center mb-5">
+                    <div class="mb-4">
+                        <svg width="100" height="77" viewBox="0 0 100 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M97.9353 59.786C84.8293 47.5172 67.5485 40.6908 49.596 40.6908C31.6435 40.6908 14.3626 47.5172 1.25665 59.786C0.860822 60.1461 0.544578 60.5849 0.328179 61.0743C0.11178 61.5637 0 62.0929 0 62.628C0 63.1631 0.11178 63.6923 0.328179 64.1817C0.544578 64.6711 0.860822 65.1099 1.25665 65.4699L11.7824 75.6272C12.146 76.0296 12.594 76.3468 13.0943 76.556C13.5947 76.7653 14.1351 76.8614 14.6769 76.8377C15.2183 76.8578 15.7576 76.76 16.2574 76.551C16.7572 76.342 17.2056 76.0268 17.5715 75.6272C20.889 72.6088 24.5656 70.0105 28.5182 67.8908C29.199 67.5377 29.7813 67.021 30.2131 66.3872C30.6448 65.7533 30.9124 65.0222 30.9918 64.2595V51.6286C37.1265 49.6478 43.5449 48.6877 49.9907 48.7867C56.4205 48.9008 62.8078 49.8562 68.9896 51.6286V64.2595C68.9885 65.0434 69.224 65.8094 69.6654 66.4573C70.1067 67.1052 70.7333 67.6048 71.4631 67.8908C75.5763 69.8491 79.3443 72.4618 82.6204 75.6272C82.9863 76.0268 83.4347 76.342 83.9345 76.551C84.4343 76.76 84.9736 76.8578 85.515 76.8377C86.0568 76.8614 86.5972 76.7653 87.0976 76.556C87.5979 76.3468 88.0459 76.0296 88.4095 75.6272L98.9352 65.4699C99.3079 65.1021 99.5953 64.6569 99.7772 64.1659C99.9591 63.6748 100.031 63.1498 99.9878 62.628C99.3882 61.6224 98.7014 60.6714 97.9353 59.786ZM87.4096 17.6832L81.831 11.7888L66.9371 26.3143L72.7262 31.9982C77.3823 26.8346 82.338 21.9493 87.5675 17.3674L87.4096 17.6832ZM53.7273 0H45.4646V20.3146H53.7273V0ZM26.3078 31.5771L32.097 25.8406L17.782 11.3678L11.5718 17.4727C12.4139 17.4727 26.3078 31.5771 26.3078 31.5771Z" fill="#D1D3D5"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="mb-4">No active interaction</h3>
+
+                    <form action="#">
+                        <div class="phone-field me-3">
+                            <div class="col">
+                                <div class="form-item">
+                                    <input id="country_selector" type="text">
+                                </div>
+                                <div class="form-item" style="display:none;">
+                                    <input type="text" id="country_selector_code" name="country_selector_code" data-countrycodeinput="1" readonly="readonly" placeholder="Selected country code will appear here" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- <label for="phone-number" class="form-label">Phone number or quick dial</label> -->
+                                <input id="phone-number" name="phone-number" type="text" placeholder="Number or quick dial" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-phone me-1"></i> Call</button>
+                    </form>
+           
+                </div>
+            </div><!-- end .ccp-no-interaction -->
+
+            <div class="ccp-interaction">
+                <form action="#">
+                    <div class="live-call-wrap pt-3 px-3 pt-lg-4 px-lg-4">
+                        <div class="row mb-3 mb-lg-4">
+                            <div class="col-lg-7 col-xxl-9 mb-3 mb-lg-0">
+                                <div class="live-call-number">
+                                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="25" cy="25" r="25" fill="#7CB900"/>
+                                        <path d="M36.0918 13.2017L31.0138 12.0298C30.462 11.9029 29.8957 12.191 29.671 12.7085L27.3273 18.1772C27.1223 18.6557 27.259 19.2172 27.6643 19.5443L30.6232 21.9661C28.8654 25.7112 25.7942 28.8263 21.971 30.6183L19.5492 27.6594C19.2172 27.2541 18.6605 27.1174 18.182 27.3225L12.7134 29.6662C12.1909 29.8957 11.9029 30.4621 12.0298 31.0138L13.2017 36.0918C13.3237 36.6191 13.7925 37 14.3442 37C26.8488 37 37 26.8684 37 14.3442C37 13.7974 36.624 13.3237 36.0918 13.2017Z" fill="white"/>
+                                    </svg>
+        
+                                    <div class="ms-3"><span>Live Call</span> (816) 888-5501</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-xxl-3">
+                                <label for="disposition" class="form-label">Disposition <span class="req">*</span></label>
+                                <select id="disposition" name="disposition" class="form-select">
+                                    <option>Select</option>
+                                    <option>Disposition 1</option>
+                                    <option>Disposition 2</option>
+                                    <option>Disposition 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-8 order-lg-2 mb-4 mb-lg-0 text-lg-end">
+                                <strong>ID:</strong> 72c49161-191a-49e2-72c49161-191a-49e2
+                            </div>
+                            <div class="col-lg-4 order-lg-1">
+                                <div class="title">Interaction</div>
+                            </div>
+                        </div>
+                    </div><!-- end .live-call-wrap -->
+
+                    <div class="form-fields p-3 p-lg-4">
+                        <div class="row">
+                            <div class="col-xxl-8">
+                                <div class="row">
+                                    <div class="col-xl-6 mb-3">
+                                        <label for="caller" class="form-label">Who was the caller? <span class="req">*</span></label>
+                                        <select id="caller" name="caller" class="form-select">
+                                            <option value="Customer">Customer</option>
+                                            <option value="Broker">Broker</option>
+                                            <option value="Assistor">Assistor</option>
+                                            <option value="Insurer">Insurer</option>
+                                            <option value="Test Call / Wrong Number">Test Call / Wrong Number</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 mb-3">
+                                        <label for="reason" class="form-label">What was the primary reason for this call? <span class="req">*</span></label>
+                                        <select id="reason" name="reason" class="form-select">
+                                            <option value="Creating/Claiming Account (Access Code)">Creating/Claiming Account (Access
+                                                Code)</option>
+                                            <option value="Logging in (Password Reset, DUO)">Logging in (Password Reset, DUO)</option>
+                                            <option
+                                                value="Application Assistance (Applying for coverage/Filling out/Submitting application)">
+                                                Application Assistance (Applying for coverage/Filling out/Submitting application)
+                                            </option>
+                                            <option value="Eligibility Questions / Help/APTC/CSR (HH size, Income,)">Eligibility
+                                                Questions / Help/APTC/CSR (HH size, Income,)</option>
+                                            <option value="Eligibility for QLEs">Eligibility for QLEs</option>
+                                            <option value="Plan Shopping">Plan Shopping</option>
+                                            <option value="DMI Questions / Help">DMI Questions / Help</option>
+                                            <option value="Appeals">Appeals</option>
+                                            <option value="Medicaid (AT Status, Transfers)">Medicaid (AT Status, Transfers)</option>
+                                            <option value="Ticket Status (Non-DMI)">Ticket Status (Non-DMI)</option>
+                                            <option value="Technical Help (System Error/Website Navigation)">Technical Help (System
+                                                Error/Website Navigation)</option>
+                                            <option value="Feedback (Kudos, Complaints, Suggestions)">Feedback (Kudos, Complaints,
+                                                Suggestions)</option>
+                                            <option value="Misc. / Other">Misc. / Other</option>
+                                            <option value="Test Call">Test Call</option>
+                                            <option value="Broker/Assister Account maintenance">Broker/Assister Account maintenance
+                                            </option>
+                                            <option value="Broker/Assister BOB questions">Broker/Assister BOB questions</option>
+                                            <option value="Broker/Assister Training and Certification">Broker/Assister Training and
+                                                Certification</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-xl-6 mb-3">
+                                        <label for="callerLanguage" class="form-label">What language did the caller perfer to speak? <span class="req">*</span></label>
+                                        <select id="callerLanguage" name="callerLanguage" class="form-select">
+                                            <option value="English">English</option>
+                                            <option value="Spanish">Spanish</option>
+                                            <option value="Middle Eastern/North African languages (Arabic, Farsi, Hebrew, Turkish)">
+                                                Middle Eastern/North African languages (Arabic, Farsi, Hebrew, Turkish)</option>
+                                            <option value="Russian">Russian</option>
+                                            <option value="German">German</option>
+                                            <option value="Dutch">Dutch</option>
+                                            <option value="Vietnamese">Vietnamese</option>
+                                            <option value="Tagalog">Tagalog</option>
+                                            <option value="Bulgarian">Bulgarian</option>
+                                            <option value="Nepali">Nepali</option>
+                                            <option value="Arabic">Arabic</option>
+                                            <option value="Korean">Korean</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 mb-3">
+                                        <label for="callResult" class="form-label">Was the call a result of any of the following? <span class="req">*</span></label>
+                                        <select id="callResult" name="callResult" class="form-select">
+                                            <option value="Customer Specific Notice (AR, Eligibility and ROP)">Customer Specific Notice
+                                                (AR, Eligibility and ROP)</option>
+                                            <option
+                                                value="Customer Specific Email (DMI request, change in liability, reminders, targeted)">
+                                                Customer Specific Email (DMI request, change in liability, reminders, targeted)</option>
+                                            <option value="Customer Call Back – Voicemail/phone call CSR Outreach">Customer Call Back –
+                                                Voicemail/phone call CSR Outreach</option>
+                                            <option value="Assister/Broker Referral">Assister/Broker Referral</option>
+                                            <option value="General Marketing Email (not customer specific)">General Marketing Email (not
+                                                customer specific)</option>
+                                            <option value="TV Advertisement">TV Advertisement</option>
+                                            <option value="Other – Free Form Text">Other – Free Form Text</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-3">
+                                        <label for="comment" class="form-label">If you selected 'Other', please document here. (Maximum 255 Characters)</label>
+                                        <textarea id="comment" name="comment" class="form-control"></textarea>
+                                    </div>
+                                    
+                                    <div class="col-xl-6 mb-3">
+                                        <label for="category" class="form-label">Ticket Type/ Category <span class="req">*</span></label>
+                                        <select id="category" name="category" class="form-select">
+                                            <option value="Appeal">Appeal</option>
+                                            <option value="Assistor">Assistor</option>
+                                            <option value="Broker">Broker</option>
+                                            <option value="Eligibility">Eligibility</option>
+                                            <option value="Enrollment">Enrollment</option>
+                                            <option value="Exchange">Exchange</option>
+                                            <option value="Feedback">Feedback</option>
+                                            <option value="Broker">Broker</option>
+                                            <option value="Issuer">Issuer</option>
+                                            <option value="Issues">Issues</option>
+                                            <option value="Jira">Jira</option>
+                                            <option value="Medicaid">Medicaid</option>
+                                            <option value="QLE">QLE</option>
+                                            <option value="Technical">Technical</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 mb-3">
+                                        <label for="callTransferTo" class="form-label">Who was call the transferred to? <span class="req">*</span></label>
+                                        <select id="callTransferTo" name="callTransferTo" class="form-select"
+                                            aria-label="Default select example">
+                                            <option value="Insurer">Insurer</option>
+                                            <option value="Broker">Broker</option>
+                                            <option value="Assistor">Assistor</option>
+                                            <option value="DHS">DHS</option>
+                                            <option value="HC.gov">HC.gov</option>
+                                            <option value="Internal (L2, Supervisor)">Internal (L2, Supervisor)</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-3">
+                                        <label for="additionalcomments" class="form-label">If you selected 'Other', please document here. (Maximum 255 Characters) </label>
+                                        <textarea id="additionalcomments" name="additionalcomments" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="col-xxl-4">
+                                <div class="ms-xxl-5">
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Comments</label>
+                                        <textarea id="message" name="message" class="form-control"></textarea>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end .form-fields -->
+
+                </form>
+            </div><!-- end .ccp-interaction -->
+        </div><!-- end .content-sec -->
+
+    </main><!-- #main -->
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/countrySelect.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>
