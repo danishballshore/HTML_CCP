@@ -24,13 +24,7 @@
             <div class="hd-left">
                 <div class="dd-wrap">
                     <button id="agent-status-dropdown">
-                        <div class="dd-icon">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="10" cy="10" r="10" fill="#EF1B1B"/>
-                                <path d="M6.11794 5L5 6.11794L8.90663 10L5 13.8821L6.11794 15L10.0246 11.1179L13.9312 15L15.0369 13.8821L11.1425 10L15.0369 6.11794L13.9312 5L10.0246 8.88206L6.11794 5Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="dd-selected-opt">Not Ready</div>
+                        <div class="dd-selected-opt"><i class="fas fa-times-circle"></i> Not Ready</div>
                         <div class="dd-arrow">  
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.99953 7.2C5.74367 7.2 5.48768 7.09955 5.29269 6.89866L0.292953 1.7558C-0.0976512 1.35402 -0.0976512 0.703125 0.292953 0.301339C0.683558 -0.100446 1.31634 -0.100446 1.70694 0.301339L5.99953 4.71857L10.2931 0.302143C10.6837 -0.099643 11.3164 -0.099643 11.707 0.302143C12.0977 0.703928 12.0977 1.35482 11.707 1.75661L6.70731 6.89946C6.512 7.10036 6.25577 7.2 5.99953 7.2Z" fill="#333333"/>
@@ -38,11 +32,11 @@
                         </div>
                     </button>
                     <ul class="dd-list">
-                        <li class="d-none">Not Ready</li>
-                        <li>Training</li>
-                        <li>Break</li>
-                        <li>Meeting</li>
-                        <li>Available</li>
+                        <li class="d-none"><i class="fas fa-times-circle"></i> Not Ready</li>
+                        <li><i class="fas fa-times-circle"></i> Training</li>
+                        <li><i class="fas fa-times-circle"></i> Break</li>
+                        <li><i class="fas fa-times-circle"></i> Meeting</li>
+                        <li><i class="fas fa-check-circle"></i> Available</li>
                     </ul>
                 </div>
             </div>
@@ -89,7 +83,7 @@
             <div class="sidebar-content">
 
                 <!-- ccp-no-call -->
-                <div class="ccp-call-sec" style="display: none;">
+                <div class="ccp-call-sec">
                     <div class="content-body">
                         <div class="current-call">
                             Current Call <span class="call-count">1</span>
@@ -284,7 +278,7 @@
                     </div>
                 </div><!-- end .ccp-ccp-keypad-sec -->
 
-                <div class="connecting-call-sec">
+                <div class="connecting-call-sec" style="display: none;">
                     <div class="content-body">
                         <div class="alert alert-success d-flex align-items-center">
                             <strong>+1 575-329-9620</strong> 

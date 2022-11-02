@@ -7,21 +7,6 @@ jQuery(document).ready(function($){
         preferredCountries: ['']
     });
 
-    // Show/hide sections or screens
-    /*
-    $('.btn-phone').click(function(){
-        $(this).addClass('active');
-        $('.btn-settings').removeClass('active');
-        $('#tab-1').show();
-        $('#tab-2').hide();
-    });
-    $('.btn-settings').click(function(){
-        $(this).addClass('active');
-        $('.btn-phone').removeClass('active');
-        $('#tab-2').show();
-        $('#tab-1').hide();
-    });*/
-
     $('.btn-call').click(function(){
         $('.ccp-quick-dial-sec').hide();
         $('.ccp-keypad-sec').hide();
@@ -76,14 +61,14 @@ jQuery(document).ready(function($){
         }
     });   
     $('.hd-left .dd-wrap ul li').click(function(){
-        var dd_list_text = $(this).text();
+        var dd_list_var = $(this).html();
         $('.dd-wrap ul li').each(function(){
             if ($(this).hasClass("d-none")) {
                 $(this).removeClass("d-none");
             }
         });  
         $(this).addClass("d-none");
-        $('.dd-wrap .dd-selected-opt').text(dd_list_text);
+        $('.dd-wrap .dd-selected-opt').html(dd_list_var);
         $('.dd-wrap').removeClass("dd-open");
     });  
     $(".dd-wrap").mouseleave(function(){
