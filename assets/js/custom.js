@@ -8,35 +8,35 @@ jQuery(document).ready(function($){
     });
 
     $('.btn-call').click(function(){
-        $('.ccp-quick-dial-sec').hide();
-        $('.ccp-keypad-sec').hide();
+        $('.ccp-quick-dial-sec, .ccp-keypad-sec').hide();
+        $('.ccp-call-sec').show();
         $('.sidebar-nav .btn-quick-dial').removeClass('active');
         $('.sidebar-nav .btn-call').addClass('active');
     });
 
     $('.btn-quick-dial').click(function(){
         $('.ccp-quick-dial-sec').show();
-        $('.ccp-keypad-sec, .ccp-ni-content form').hide();
+        $('.ccp-call-sec, .ccp-keypad-sec, .ccp-ni-content form').hide();
         $('.sidebar-nav .btn-call').removeClass('active');
         $('.sidebar-nav .btn-quick-dial').addClass('active');
         
     });
     $('.ccp-quick-dial-sec .btn-close').click(function(){
         $('.ccp-quick-dial-sec').hide();
-        $('.ccp-ni-content form').show();
+        $('.ccp-call-sec, .ccp-ni-content form').show();
         $('.sidebar-nav .btn-quick-dial').removeClass('active');
         $('.sidebar-nav .btn-call').addClass('active');
     });
     
     $('.btn-keypad').click(function(){
         $('.ccp-keypad-sec').show();
-        $('.ccp-quick-dial-sec').hide();
+        $('.ccp-call-sec, .ccp-quick-dial-sec').hide();
         $('.sidebar-nav .btn-call').removeClass('active');
         $('.sidebar-nav .btn-quick-dial').addClass('active');
     });
     $('.ccp-keypad-sec .btn-close').click(function(){
         $('.ccp-keypad-sec').hide();
-        $('.ccp-ni-content form').show();
+        $('.ccp-call-sec, .ccp-ni-content form').show();
         $('.sidebar-nav .btn-quick-dial').removeClass('active');
         $('.sidebar-nav .btn-call').addClass('active');
     });
